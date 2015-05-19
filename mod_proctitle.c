@@ -28,18 +28,18 @@ extern char *ap_server_argv0;
 char proctitle_buf[128];
 static void proctitle_child_init(apr_pool_t *pchild, server_rec *s)
 {
-       strncpy(ap_server_argv0,"httpd: init-child",64);
+       strncpy(ap_server_argv0,"apache2: init-child",64);
 }
 static int proctitle_clear(request_rec *r)
 {
-       strncpy(ap_server_argv0,"httpd: idle",64);
+       strncpy(ap_server_argv0,"apache2: idle",64);
        return DECLINED;
 }
 static int proctitle_ft(request_rec *r)
 {
        bzero(proctitle_buf,128);
-       snprintf(proctitle_buf,127,"httpd: %16s [%s] %s",
-               r->connection->remote_ip,r->hostname,
+       snprintf(proctitle_buf,127,"apache2: %16s [%s] %s",
+               r->connection->client_ip,r->hostname,
                r->the_request);
        strncpy(ap_server_argv0,proctitle_buf,128);
        return DECLINED;
