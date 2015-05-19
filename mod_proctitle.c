@@ -24,6 +24,8 @@
 #include "http_request.h"
 #include "http_protocol.h"
 #include "ap_config.h"
+#include "ap_release.h"
+
 extern char *ap_server_argv0;
 char proctitle_buf[128];
 static void proctitle_child_init(apr_pool_t *pchild, server_rec *s)
@@ -39,8 +41,13 @@ static int proctitle_ft(request_rec *r)
 {
        bzero(proctitle_buf,128);
        snprintf(proctitle_buf,127,"apache2: %16s [%s] %s",
-               r->connection->client_ip,r->hostname,
-               r->the_request);
+#if AP_SERVER_MAJORVERSION_NUMBER == 2 && AP_SERVER_MINORVERSION_NUMBER >= 4 // For apache 2.4
+              r->connection->client_ip,
+#else
+              r->connection->remote_ip,
+#endif
+              r->hostname,
+              r->the_request);
        strncpy(ap_server_argv0,proctitle_buf,128);
        return DECLINED;
 }
