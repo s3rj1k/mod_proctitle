@@ -1,9 +1,10 @@
 mod_proctitle
 =============
 
-Port of mod_proctitle to Apache 2.x.x
+Port of mod_proctitle to Apache 2.4
 
-The code for Apache1 can be found at http://dammit.lt 
+The code for Apache1 can be found at http://dammit.lt
+Original port repo: https://github.com/drakmor/mod_proctitle
 
 mod_proctitle.c -- Apache sample proctitle module
 
