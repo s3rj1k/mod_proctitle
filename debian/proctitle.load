@@ -1,1 +1,1 @@
-LoadModule rpaf_module /usr/lib/apache2/modules/mod_proctitle.so
+LoadModule proctitle_module /usr/lib/apache2/modules/mod_proctitle.so
