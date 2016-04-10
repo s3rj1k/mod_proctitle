@@ -17,6 +17,6 @@ Then activate it as follows:
     $ echo "LoadModule proctitle_module /usr/lib/apache2/modules/mod_proctitle.so" > /etc/apache2/mods-available/proctitle.load
     $ a2enmod proctitle
 
-Then after restarting Apache via
+Then after restarting Apache via:
 
     $ apache2ctl restart
