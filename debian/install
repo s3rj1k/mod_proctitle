@@ -1,0 +1,2 @@
+.libs/mod_proctitle.so  usr/lib/apache2/modules
+debian/proctitle.load   etc/apache2/mods-available

@@ -1,0 +1,13 @@
+Source: libapache2-mod-proctitle
+Maintainer: s3rj1k <evasive.gyron@gmail.com>
+Section: httpd
+Priority: extra
+Standards-Version: 3.9.3
+Build-Depends: apache2-prefork-dev, debhelper (>= 7.0.50~)
+Homepage: https://github.com/phsm/mod_proctitle
+
+Package: libapache2-mod-proctitle
+Architecture: any
+Depends: apache2 | apache2-mpm-prefork, ${shlibs:Depends}, ${misc:Depends}
+Description: module for Apache2 which sets process name.
+ This extension allows changing the current process name.
