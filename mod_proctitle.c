@@ -42,7 +42,7 @@ static int proctitle_ft(request_rec *r)
        bzero(proctitle_buf,128);
        snprintf(proctitle_buf,127,"apache2: %16s [%s] %s",
 #if AP_SERVER_MAJORVERSION_NUMBER == 2 && AP_SERVER_MINORVERSION_NUMBER >= 4 // For apache 2.4
-              r->connection->client_ip,
+              r->useragent_ip,
 #else
               r->connection->remote_ip,
 #endif
@@ -56,8 +56,8 @@ static void proctitle_register_hooks(apr_pool_t *p)
    ap_hook_child_init(proctitle_child_init, NULL, NULL, APR_HOOK_FIRST);
    ap_hook_translate_name(proctitle_ft,NULL,NULL, APR_HOOK_FIRST);
    ap_hook_log_transaction(proctitle_clear,NULL,NULL, APR_HOOK_LAST);
-   /* fix for correct graceful && restart 
-      strncpy(ap_server_argv0,"httpd: master",60); 
+   /* fix for correct graceful && restart
+      strncpy(ap_server_argv0,"httpd: master",60);
    */
 }
 /* Dispatch list for API hooks */
