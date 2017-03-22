@@ -1,3 +1,9 @@
+libapache2-mod-proctitle (2017.3+deb8u2) stable; urgency=low
+
+  * Fixed IP display in process list.
+
+ -- s3rj1k <evasive.gyron@gmail.com>  Wed, 22 Mar 2017 16:00:00 +0400
+
 libapache2-mod-proctitle (2015.3+deb8u1) stable; urgency=low
 
   * Initial release.
