@@ -1,0 +1,11 @@
+libapache2-mod-proctitle (2019.8+deb9u1) stretch; urgency=low
+
+  * New release for Debian 9.
+
+ -- s3rj1k <evasive.gyron@gmail.com>  Fri, 16 Aug 2019 16:00:00 +0300
+
+libapache2-mod-proctitle (2019.8) stretch; urgency=low
+
+  * Stub release.
+
+ -- s3rj1k <evasive.gyron@gmail.com>  Mon, 11 Apr 2016 09:00:00 +0400
